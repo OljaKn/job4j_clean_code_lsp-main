@@ -24,11 +24,12 @@ class PrinterTest {
     System.setOut(new PrintStream(outputStream));
     Printer printer = new Printer();
     printer.print(menu);
-    String exp = "--1.Приготовить обед\r\n"
-               + "----1.1.Сварить суп\r\n"
-               + "--2.Сходить в магазин\r\n"
-               + "--3.Погулять с собакой\r\n"
-               + "----3.1.Захватить мусор\r\n"
+    String sl = System.lineSeparator();
+    String exp = "--1.Приготовить обед" + sl
+               + "----1.1.Сварить суп" + sl
+               + "--2.Сходить в магазин" + sl
+               + "--3.Погулять с собакой" + sl
+               + "----3.1.Захватить мусор" + sl
                + "------3.1.1.взять коробку";
     System.setOut(out);
     assertThat(outputStream.toString().trim()).isEqualTo(exp);
